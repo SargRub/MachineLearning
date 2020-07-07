@@ -10,7 +10,7 @@ text_data = [
 def replace_symbols(string: str) -> str:
     new_string = ""
     for character in string:
-        if unicodedata.category(character) != "Po":
+        if not unicodedata.category(character).startswith('P'):
             new_string += character
     return new_string
 
